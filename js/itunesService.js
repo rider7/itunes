@@ -9,4 +9,10 @@ angular.module('itunes').service('itunesService', function($http, $q){
 
     //Code here
     
+    this.getArtist = function(artist){
+    return $http({
+        method: 'JSONP',
+        url: 'https://itunes.apple.com/search?term=' + artist + '&callback=JSON_CALLBACK'
+    })
+  }
 });
